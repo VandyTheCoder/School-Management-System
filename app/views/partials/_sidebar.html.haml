@@ -1,0 +1,41 @@
+.sidebar{"data-color" => "blue", "data-image" => "/img/sidebar-4.jpg"}
+  /
+    Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+    Tip 2: you can also add an image using data-image tag
+  .sidebar-wrapper
+    .logo
+      %a.simple-text{:href => "http://www.facebook.com/vandy.sodanhean"}
+        School Management
+    %ul.nav
+      %li.active
+        %a{:href => "dashboard.html"}
+          %i.pe-7s-graph
+          %p Dashboard
+      %li
+        %a{:href => "user.html"}
+          %i.pe-7s-user
+          %p User Profile
+      %li
+        %a{:href => "table.html"}
+          %i.pe-7s-study
+          %p Students
+      %li
+        = link_to teachers_url do
+          %i.pe-7s-id
+          %p Teachers
+      %li
+        = link_to parents_url do
+          %i.pe-7s-users
+          %p Parents
+      %li
+        %a{:href => "icons.html"}
+          %i.pe-7s-ribbon
+          %p Courses
+      %li
+        %a{:href => "icons.html"}
+          %i.pe-7s-culture
+          %p Class Rooms
+      %li
+        %a{:href => "maps.html"}
+          %i.pe-7s-note2
+          %p Grade

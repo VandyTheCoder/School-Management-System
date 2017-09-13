@@ -1,0 +1,47 @@
+%nav.navbar.navbar-default.navbar-fixed
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navigation-example-2", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        = controller_name.capitalize
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-left
+        %li
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.fa.fa-dashboard
+            Dashboard
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.fa.fa-globe
+            Notifications
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} Notification 1
+        %li
+          %a{:href => ""}
+            %i.fa.fa-search
+            Search
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.fa.fa-user-circle-o
+            My Account
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-edit
+                Edit Profile
+            %li
+              %a{:href => "#"}
+                %i.fa.fa-gears
+                Setting
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-power-off
+            Log out

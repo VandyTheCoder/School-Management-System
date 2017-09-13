@@ -1,0 +1,46 @@
+%p#notice= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Parent
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Image
+              %td= image_tag @parent.image, size: '150x150'
+            %tr
+              %th Name
+              %td= @parent.name
+            %tr
+              %th Gender
+              %td= @parent.gender
+            %tr
+              %th Date of Birth
+              %td= @parent.dob
+            %tr
+              %th Phone
+              %td= @parent.phone
+            %tr
+              %th Email
+              %td= @parent.email
+            %tr
+              %th Address
+              %td= @parent.address
+        .col-md-6.col-xs-12
+          %input#lat-value{value: @parent.lat, type: 'hidden'}
+          %input#long-value{value: @parent.long, type: 'hidden'}
+          #show-parent-map
+
+    .footer
+      = link_to parents_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_parent_path(@parent), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br

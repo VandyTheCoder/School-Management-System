@@ -1,0 +1,18 @@
+// Theme
+@import "admin/css/bootstrap.min";
+@import "admin/css/animate.min";
+@import "admin/css/light-bootstrap-dashboard";
+@import "bootstrap-datepicker3";
+
+// Fonts
+@import "font-awesome-sprockets"; // Lib
+@import "font-awesome"; // Lib
+@import "http://fonts.googleapis.com/css?family=Roboto:400,700,300";
+@import "admin/css/pe-icon-7-stroke";
+
+// Custom
+@import "common/*";
+
+// Controller
+@import "parents/*";
+@import "teachers/*";

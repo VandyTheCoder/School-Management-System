@@ -1,0 +1,26 @@
+= simple_form_for(@teacher) do |f|
+  = f.error_notification
+  .row
+    .col-xs-12.col-md-6
+      .image-uploader{align: 'center'}
+        %a{:href => "#!"}
+          = image_tag f.object.image, size: '150x150'
+        = f.input :image, as: :file, label: 'Upload Image',
+          :label_html => { class: 'btn btn-default'}
+        = f.hidden_field :image_cache
+
+      = f.input :name
+      = f.input :email
+      = f.input :password
+      = f.input :dob
+      = f.input :phone
+      = f.input :gender, collection: Teacher::GENDER
+      = f.input :address
+
+    .col-xs-12.col-md-6
+      = f.input :lat, as: :hidden, input_html: {id: 'teacher-lat'}
+      = f.input :long, as: :hidden, input_html: {id: 'teacher-long'}
+
+      #map-teacher
+
+  = f.button :submit, class: 'btn btn-primary btn-fill'
