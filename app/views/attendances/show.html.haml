@@ -1,0 +1,38 @@
+- if notice.present?
+  .alert.alert-info{role: "alert"}= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Course
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Student:
+              %td= @attendance.student.name
+            %tr
+              %th Start date:
+              %td= @attendance.start_date
+            %tr
+              %th End date:
+              %td= @attendance.end_date
+            %tr
+              %th Status:
+              %td= @attendance.status
+            %tr
+              %th Remark:
+              %td= @attendance.remark
+            
+    .footer
+      = link_to attendances_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_attendance_path(@attendance), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br
+

@@ -1,0 +1,46 @@
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title
+        %i.pe-7s-ribbon
+        Listing Attendances
+      %hr
+      = link_to new_attendance_path, class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-plus-square
+        New Attendance
+      %br
+      %br
+
+    .content.table-responsive.table-full-width
+      %table.table.table-hover.table-striped
+        %thead
+          %tr
+            %th Student
+            %th Start date
+            %th End date
+            %th Status
+            %th Remark
+            %th Actions
+
+        %tbody
+          - @attendances.each do |attendance|
+            %tr
+              %td= attendance.student.name
+              %td= attendance.start_date
+              %td= attendance.end_date
+              %td= attendance.status
+              %td= attendance.remark
+              %td
+                = link_to attendance, class: 'btn btn-info btn-sm' do
+                  %i.fa.fa-eye
+                  Show
+                = link_to edit_attendance_path(attendance), class: 'btn btn-primary btn-sm' do
+                  %i.fa.fa-edit
+                  Edit
+                = link_to attendance, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do
+                  %i.fa.fa-trash
+                  Delete
+    %br
+
+

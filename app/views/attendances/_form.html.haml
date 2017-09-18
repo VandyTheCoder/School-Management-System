@@ -1,0 +1,13 @@
+= simple_form_for(@attendance) do |f|
+  = f.error_notification
+  .row
+    .col-xs-12.col-md-6
+
+      = f.input :student_id, collection: Student.all
+      = f.input :start_date
+      = f.input :end_date
+      = f.input :remark
+      = f.input :status
+
+  = f.button :submit, class: 'btn btn-primary btn-fill'
+
