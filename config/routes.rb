@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :students
   resources :exams
+  resources :courses
 
   root 'dashboard#index'
 end

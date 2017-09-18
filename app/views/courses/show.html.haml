@@ -1,0 +1,32 @@
+- if notice.present?
+  .alert.alert-info{role: "alert"}= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Course
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Name
+              %td= @course.name
+            %tr
+              %th Description
+              %td= @course.description
+            %tr
+              %th Grade
+              %td= @course.grade.name
+            
+
+    .footer
+      = link_to courses_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_course_path(@course), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br
