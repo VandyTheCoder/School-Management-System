@@ -16,7 +16,7 @@
           %i.pe-7s-user
           %p User Profile
       %li
-        %a{:href => "table.html"}
+        = link_to students_url do
           %i.pe-7s-study
           %p Students
       %li
@@ -36,6 +36,10 @@
           %i.pe-7s-culture
           %p Class Rooms
       %li
-        %a{:href => "maps.html"}
+        = link_to grades_url do
           %i.pe-7s-note2
           %p Grade
+      %li
+        = link_to exam_categories_url do
+          %i.pe-7s-note2
+          %p Exam Categories

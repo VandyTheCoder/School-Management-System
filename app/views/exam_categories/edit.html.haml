@@ -1,0 +1,20 @@
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Edit Exam Category
+      %hr
+
+    .content
+      = render 'form'
+
+    %hr
+    .footer
+
+      = link_to exam_categories_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left  
+        Back
+      = link_to @exam_category, class: 'btn btn-info btn-fill' do
+        %i.fa.fa-eye
+        Show
+    %br

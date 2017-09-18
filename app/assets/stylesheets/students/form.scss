@@ -1,0 +1,24 @@
+body[id='students_new'], [id='students_create'], [id='students_edit'], [id='students_update']
+{
+  .image-uploader > a > img {
+    border-radius: 0px;
+    width: 150px;
+    height: auto;
+  }
+
+  .control-label {
+    margin-top: 10px;
+    margin-right: 0px;
+    width: 150px;
+  }
+
+  .image-uploader [type=file]{
+    display: none;
+  }
+
+  #map-student {
+    height: 830px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+}

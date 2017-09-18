@@ -1,0 +1,2 @@
+class ExamCategory < ApplicationRecord
+end

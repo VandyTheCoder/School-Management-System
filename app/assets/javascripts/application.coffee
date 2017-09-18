@@ -17,6 +17,7 @@
 
 #= require parents/form
 #= require parents/show
-
 #= require teachers/form
 #= require teachers/show
+#= require students/form
+#= require students/show

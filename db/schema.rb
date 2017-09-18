@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913055003) do
+ActiveRecord::Schema.define(version: 20170918071013) do
+
+  create_table "exam_categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "names", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.date "dob"
+    t.string "gender"
+    t.string "image"
+    t.string "phone"
+    t.string "address"
+    t.string "lat"
+    t.string "long"
+    t.string "last_login_ip"
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_names_on_email", unique: true
+    t.index ["parent_id"], name: "index_names_on_parent_id"
+    t.index ["reset_password_token"], name: "index_names_on_reset_password_token", unique: true
+  end
 
   create_table "parents", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +77,34 @@ ActiveRecord::Schema.define(version: 20170913055003) do
     t.string "image"
     t.index ["email"], name: "index_parents_on_email", unique: true
     t.index ["reset_password_token"], name: "index_parents_on_reset_password_token", unique: true
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "name"
+    t.date "dob"
+    t.string "phone"
+    t.text "address"
+    t.float "lat"
+    t.float "long"
+    t.string "last_login_ip"
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "gender"
+    t.string "image"
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["parent_id"], name: "index_students_on_parent_id"
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
   create_table "teachers", force: :cascade do |t|
