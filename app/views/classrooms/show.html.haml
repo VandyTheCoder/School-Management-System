@@ -1,0 +1,45 @@
+- if notice.present?
+  .alert.alert-info{role: "alert"}= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Classroom
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Name
+              %td= @classroom.name
+            %tr
+              %th Year
+              %td= @classroom.year
+            %tr
+              %th Section:
+              %td= @classroom.section
+            %tr
+              %th Remarks:
+              %td= @classroom.remarks
+            %tr
+              %th Teacher:
+              %td= @classroom.teacher.name
+            %tr
+              %th Grade:
+              %td= @classroom.grade.name
+            %tr
+              %th Status:
+              %td= @classroom.status
+            
+
+    .footer
+      = link_to classrooms_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_classroom_path(@classroom), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br
+

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year: MyString
+  grade: one
+  section: MyString
+  status: MyString
+  remarks: MyString
+  teacher: one
+
+two:
+  name: MyString
+  year: MyString
+  grade: two
+  section: MyString
+  status: MyString
+  remarks: MyString
+  teacher: two

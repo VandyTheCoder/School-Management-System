@@ -1,0 +1,17 @@
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title New Classroom
+      %hr
+
+    .content
+      = render 'form'
+
+    %hr
+    .footer
+      = link_to classrooms_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+    %br
+
