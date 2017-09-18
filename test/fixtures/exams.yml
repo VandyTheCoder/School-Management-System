@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam_category: one
+  name: MyString
+  start_date: 2017-09-18
+
+two:
+  exam_category: two
+  name: MyString
+  start_date: 2017-09-18

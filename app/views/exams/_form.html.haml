@@ -1,0 +1,10 @@
+= simple_form_for(@exam) do |f|
+  = f.error_notification
+  .row
+    .col-xs-12.col-md-6
+
+      = f.input :name
+      = f.input :start_date
+      = f.input :exam_category_id, collection: ExamCategory.all
+
+  = f.button :submit, class: 'btn btn-primary btn-fill'
