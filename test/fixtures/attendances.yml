@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  start_date: 2017-09-18
+  end_date: 2017-09-18
+  status: MyString
+  remark: MyString
+
+two:
+  student: two
+  start_date: 2017-09-18
+  end_date: 2017-09-18
+  status: MyString
+  remark: MyString
