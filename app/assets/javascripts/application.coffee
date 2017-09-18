@@ -1,8 +1,6 @@
 #= require jquery
 #= require jquery_ujs
 #= require rails-ujs
-#= require moment
-#= require bootstrap-datepicker.min
 
 #= require namespace
 #= require common

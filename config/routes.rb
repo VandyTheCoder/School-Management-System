@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   scope 'auth' do
     devise_for :parents
     devise_for :teachers
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :grades
 
   resources :students
+  resources :exams
 
   root 'dashboard#index'
 end

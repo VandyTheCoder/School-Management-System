@@ -1,0 +1,33 @@
+- if notice.present?
+  .alert.alert-info{role: "alert"}= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Exam
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Name
+              %td= @exam.name
+            %tr
+              %th Date
+              %td= @exam.start_date
+            %tr
+              %th Exam Category
+              %td= @exam.exam_category.name
+            
+
+    .footer
+      = link_to exams_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_exam_path(@exam), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br
+
