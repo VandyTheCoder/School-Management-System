@@ -41,7 +41,7 @@ class TeachersController < ApplicationController
   # PATCH/PUT /teachers/1.json
   def update
     respond_to do |format|
-      if @teacher.update(teacher_params)
+      if @teacher.update_without_password(teacher_params)
         format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
         format.json { render :show, status: :ok, location: @teacher }
       else

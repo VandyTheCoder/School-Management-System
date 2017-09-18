@@ -1,0 +1,38 @@
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title
+        %i.pe-7s-users
+        Listing Exam Categories
+      %hr
+      = link_to new_exam_category_path, class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-plus-square
+        New Exam Category
+      %br
+      %br
+
+    .content.table-responsive.table-full-width
+      %table.table.table-hover.table-striped
+        %thead
+          %tr
+            %th Name
+            %th Description
+            %th 
+
+        %tbody
+          - @exam_categories.each do |exam_category|
+            %tr
+              %td= exam_category.name
+              %td= exam_category.description
+              %td
+                = link_to exam_category, class: 'btn btn-info btn-sm' do
+                  %i.fa.fa-eye
+                  Show
+                = link_to edit_exam_category_path(exam_category), class: 'btn btn-primary btn-sm' do
+                  %i.fa.fa-edit
+                  Edit
+                = link_to exam_category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do
+                  %i.fa.fa-trash
+                  Delete
+    %br

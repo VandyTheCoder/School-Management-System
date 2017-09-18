@@ -1,0 +1,50 @@
+- if notice.present?
+  .alert.alert-info{role: "alert"}= notice
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title Student
+      %hr
+
+    .content
+      .row
+        .col-md-6.col-xs-12
+          %table.table
+            %tr
+              %th Image
+              %td= image_tag @student.image, size: '150x150'
+            %tr
+              %th Name
+              %td= @student.name
+            %tr
+              %th Parent Name
+              %td= link_to "#{@student.parent.name}", @student.parent
+            %tr
+              %th Gender
+              %td= @student.gender
+            %tr
+              %th Date of Birth
+              %td= @student.dob
+            %tr
+              %th Phone
+              %td= @student.phone
+            %tr
+              %th Email
+              %td= @student.email
+            %tr
+              %th Address
+              %td= @student.address
+        .col-md-6.col-xs-12
+          %input#lat-value{value: @student.lat, type: 'hidden'}
+          %input#long-value{value: @student.long, type: 'hidden'}
+          #show-student-map
+
+    .footer
+      = link_to students_path, class: 'btn btn-default' do
+        %i.fa.fa-chevron-left
+        Back
+      = link_to edit_student_path(@student), class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-edit
+        Edit
+    %br
