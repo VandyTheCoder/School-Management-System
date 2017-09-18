@@ -1,0 +1,48 @@
+.col-xs-12.col.md-12
+  .card
+
+    .header
+      %h4.title
+        %i.pe-7s-culture
+        Listing Classrooms
+      %hr
+      = link_to new_classroom_path, class: 'btn btn-primary btn-fill' do
+        %i.fa.fa-plus-square
+        New Classroom
+      %br
+      %br
+
+    .content.table-responsive.table-full-width
+      %table.table.table-hover.table-striped
+        %thead
+          %tr
+            %th Name
+            %th Year
+            %th Section
+            %th Teacher
+            %th Grade
+            %th Status
+            %th Action
+
+        %tbody
+          - @classrooms.each do |classroom|
+            %tr
+              %td= classroom.name
+              %td= classroom.year
+              %td= classroom.section
+              %td= classroom.teacher.name
+              %td= classroom.grade.name
+              %td= classroom.status
+              %td
+                = link_to classroom, class: 'btn btn-info btn-sm' do
+                  %i.fa.fa-eye
+                  Show
+                = link_to edit_classroom_path(classroom), class: 'btn btn-primary btn-sm' do
+                  %i.fa.fa-edit
+                  Edit
+                = link_to classroom, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do
+                  %i.fa.fa-trash
+                  Delete
+    %br
+
+

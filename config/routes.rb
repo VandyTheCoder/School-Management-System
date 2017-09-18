@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :classrooms
   scope 'auth' do
     devise_for :parents
     devise_for :teachers

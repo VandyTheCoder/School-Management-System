@@ -1,0 +1,15 @@
+= simple_form_for(@classroom) do |f|
+  = f.error_notification
+  .row
+    .col-xs-12.col-md-6
+
+      = f.input :name
+      = f.input :year
+      = f.input :section
+      = f.input :remarks
+      = f.input :teacher_id, collection: Teacher.all
+      = f.input :grade_id, collection: Grade.all
+      = f.input :status
+
+  = f.button :submit, class: 'btn btn-primary btn-fill'
+
