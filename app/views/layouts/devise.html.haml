@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "School Management", :name => "description"}
+    %meta{:content => "School Management", :name => "Nhean"}
+
+    %title School Management
+
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCkSX4YNQLqzBJPKdQKuESstJxUGFK7Jg8"}
+
+
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body{ id: "#{controller_name}_#{params[:action]}" }
+    %br
+    .col-xs-12.col-md-4.col-md-offset-4
+      .card
+        = yield

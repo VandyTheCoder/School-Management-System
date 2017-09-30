@@ -42,6 +42,6 @@
                 %i.fa.fa-gears
                 Setting
         %li
-          %a{:href => "#"}
+          = link_to destroy_user_session_url, method: :delete do
             %i.fa.fa-power-off
             Log out

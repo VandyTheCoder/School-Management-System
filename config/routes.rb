@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     devise_for :parents
     devise_for :teachers
     devise_for :students
+    devise_for :users
   end
 
+  resources :users
   resources :parents
   resources :teachers
   resources :exam_categories
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
   resources :classrooms
 
   root 'dashboard#index'
+  
 end

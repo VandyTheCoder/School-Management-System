@@ -12,7 +12,7 @@
           %i.pe-7s-graph
           %p Dashboard
       %li
-        %a{:href => "user.html"}
+        = link_to current_user do
           %i.pe-7s-user
           %p User Profile
       %li
@@ -43,11 +43,6 @@
         = link_to exam_categories_url do
           %i.pe-7s-note2
           %p Exam Categories
-      %li
-        = link_to exams_url do
-          %i.pe-7s-note2
-          %p Exams
-
       %li
         = link_to exams_url do
           %i.pe-7s-note2
