@@ -1,24 +1,71 @@
-# README
+# cs-school-management-system
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This system is the open-source application which developed by using [Ruby On Rails](http://rubyonrails.org) Framework. It can apply to anykind of school(Kindergarten - High school). There is enterprise version for your school if you want further customization by contacting me via email: vandysodanheang@gmail.com
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+[Ruby On Rails](http://rubyonrails.org) is web development framework which has the giant cummunity in the world. Let's start install some prerequisites before running project.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+Install Ruby Programming
 
-* Database creation
+```
+sudo apt-get install ruby-full
+```
 
-* Database initialization
+Install Bundler
 
-* How to run the test suite
+```
+gem install bundler
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Install Rails
 
-* Deployment instructions
+```
+gem install rails
+```
 
-* ...
+Install PostgresSQL and Create Owner Database
+
+```
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo -u postgres createuser $USER
+```
+
+### Installing
+
+Before running the project, you have to run some command to install third library gems which are from [RubyGems](https://rubygems.org), and create database.
+
+Install Third Party Library Gems
+```
+bundle install
+```
+
+Create Database and Tables
+```
+rails db:migrate
+```
+
+***Congratulation!*** Now you are ready to run the cs-school-management-system!
+
+## Running the tests
+
+Running or hosting the system by this command:
+```
+rails s
+```
+
+## Versioning
+
+The cs-school-management-system's version is ***1.0.9***
+
+## Authors
+
+* **Vandy Sodanheang** - *Initial work* - [Web and Mobile Developer](https://www.linkedin.com/in/vandy-sodanheang-368410113/)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
