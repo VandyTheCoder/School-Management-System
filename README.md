@@ -1,4 +1,4 @@
-# cs-school-management-system
+# School Management System
 
 This system is the open-source application which developed by using [Ruby On Rails](http://rubyonrails.org) Framework. It can apply to anykind of school(Kindergarten - High school). There is enterprise version for your school if you want further customization by contacting me via email: vandysodanheang@gmail.com
 
@@ -47,7 +47,7 @@ Create Database and Tables
 rails db:migrate
 ```
 
-***Congratulation!*** Now you are ready to run the cs-school-management-system!
+***Congratulation!*** Now you are ready to run the School Management System!
 
 ## Running the tests
 
@@ -58,7 +58,7 @@ rails s
 
 ## Versioning
 
-The cs-school-management-system's version is ***1.0.9***
+The School Management System's version is ***1.0.9***
 
 ## Authors
 
