@@ -4,7 +4,7 @@
     .col-xs-12.col-md-6
       .image-uploader{align: 'center'}
         %a{:href => "#!"}
-          = image_tag f.object.image, size: '150x150'
+          = image_tag f.object.image.url, size: '150x150'
         = f.input :image, as: :file, label: 'Upload Image',
           :label_html => { class: 'btn btn-default'}
         = f.hidden_field :image_cache

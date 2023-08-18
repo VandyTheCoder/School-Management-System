@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923025443) do
+ActiveRecord::Schema.define(version: 2017_09_23_025443) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.integer "student_id"
+    t.bigint "student_id"
     t.date "start_date"
     t.date "end_date"
     t.string "status"
@@ -26,11 +29,11 @@ ActiveRecord::Schema.define(version: 20170923025443) do
   create_table "classrooms", force: :cascade do |t|
     t.string "name"
     t.string "year"
-    t.integer "grade_id"
+    t.bigint "grade_id"
     t.string "section"
     t.string "status"
     t.string "remarks"
-    t.integer "teacher_id"
+    t.bigint "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["grade_id"], name: "index_classrooms_on_grade_id"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170923025443) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "grade_id"
+    t.bigint "grade_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["grade_id"], name: "index_courses_on_grade_id"
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170923025443) do
   end
 
   create_table "exams", force: :cascade do |t|
-    t.integer "exam_category_id"
+    t.bigint "exam_category_id"
     t.string "name"
     t.date "start_date"
     t.datetime "created_at", null: false
@@ -67,33 +70,6 @@ ActiveRecord::Schema.define(version: 20170923025443) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "names", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.date "dob"
-    t.string "gender"
-    t.string "image"
-    t.string "phone"
-    t.string "address"
-    t.string "lat"
-    t.string "long"
-    t.string "last_login_ip"
-    t.integer "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_names_on_email", unique: true
-    t.index ["parent_id"], name: "index_names_on_parent_id"
-    t.index ["reset_password_token"], name: "index_names_on_reset_password_token", unique: true
   end
 
   create_table "parents", force: :cascade do |t|
@@ -140,7 +116,7 @@ ActiveRecord::Schema.define(version: 20170923025443) do
     t.float "lat"
     t.float "long"
     t.string "last_login_ip"
-    t.integer "parent_id"
+    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender"
@@ -197,4 +173,9 @@ ActiveRecord::Schema.define(version: 20170923025443) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attendances", "students"
+  add_foreign_key "classrooms", "grades"
+  add_foreign_key "classrooms", "teachers"
+  add_foreign_key "courses", "grades"
+  add_foreign_key "exams", "exam_categories"
 end
