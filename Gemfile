@@ -5,23 +5,24 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.6.9'
+ruby '3.0.3'
 
-gem 'rails',                        '5.2.6'
-gem 'pg',                           '0.21'
-gem 'puma',                         '~> 3.7'
-gem 'sass-rails',                   '~> 5.0'
-gem 'uglifier',                     '>= 1.3.0'
-gem 'coffee-rails',                 '~> 4.2'
-gem 'turbolinks',                   '~> 5'
-gem 'jbuilder',                     '~> 2.5'
-gem 'simple_form',                  '~> 4.1'
-gem 'haml-rails',                   '~> 1.0'
-gem 'jquery-rails',                 '~> 4.3'
-gem 'carrierwave',                  '~> 2.2', '>= 2.2.2'
-gem 'devise',                       '~> 4.3'
-gem 'font-awesome-sass'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'rails',                              '6.1.7.4'
+gem 'pg',                                 '~> 1.5', '>= 1.5.3'
+gem 'puma',                               '~> 6.3', '>= 6.3.1'
+gem 'sass-rails',                         '~> 6.0'
+gem 'uglifier',                           '~> 4.2'
+gem 'coffee-rails',                       '~> 5.0'
+gem 'turbolinks',                         '~> 5.2', '>= 5.2.1'
+gem 'jbuilder',                           '~> 2.5'
+gem 'simple_form',                        '~> 5.2'
+gem 'haml-rails',                         '~> 2.1'
+gem 'jquery-rails',                       '~> 4.6'
+gem 'carrierwave',                        '~> 3.0', '>= 3.0.3'
+gem 'devise',                             '~> 4.9', '>= 4.9.2'
+gem 'font-awesome-sass',                  '~> 6.4', '>= 6.4.2'
+gem 'bootstrap3-datetimepicker-rails',    '~> 4.17', '>= 4.17.47'
+gem 'nokogiri',                           '~> 1.15', '>= 1.15.4'
 
 group :development, :test do
   gem 'byebug',                     platforms: [:mri, :mingw, :x64_mingw]
@@ -29,10 +30,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console',                '>= 3.3.0'
-  gem 'listen',                     '>= 3.0.5', '< 3.2'
+  gem 'web-console',                '~> 4.2'
+  gem 'listen',                     '~> 3.8'
   gem 'spring'
-  gem 'spring-watcher-listen',      '~> 2.0.0'
+  gem 'spring-watcher-listen',      '~> 2.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
